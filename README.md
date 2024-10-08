@@ -133,49 +133,52 @@ Crie um arquivo HTML para interagir com o WebAssembly:
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora em Rust e WebAssembly</title>
+    <link rel="stylesheet" href="index.css"> <!-- Link para o CSS -->
+    <script type="module" src="index.js"></script> <!-- Importa o JavaScript -->
 </head>
 <body>
-    <h1>Calculadora em Rust e WebAssembly</h1>
-    <label for="inputA">Digite o primeiro número:</label>
-    <input type="number" id="inputA" placeholder="0" />
+    <div class="container"> <!-- Adiciona uma div container para aplicar o CSS -->
+        <h1>Calculadora em Rust e WebAssembly</h1>
+        <label for="inputA">Digite o primeiro número:</label>
+        <input type="number" id="inputA" placeholder="0" />
 
-    <label for="inputB">Digite o segundo número:</label>
-    <input type="number" id="inputB" placeholder="0" />
+        <label for="inputB">Digite o segundo número:</label>
+        <input type="number" id="inputB" placeholder="0" />
 
-    <button id="calculateButton">Calcular Multiplicação</button>
-    <div id="result"></div>
-
-    <script type="module" src="script.js"></script> <!-- Referência ao arquivo externo -->
+        <button id="calculateButton">Calcular Multiplicação</button>
+        <div id="result"></div>
+    </div>
 </body>
 </html>
+
 ```
 # Arquivo JavaScript separado apenas por boas práticas (ESSE JAVASCRIPT FOI GERADO JUNTO COM O INDEX, FOI APENAS SEPARADO) ENQUANTO O JAVASCRIPT GERADO PELO WEBASSEMBLY FICA LÁ NA PASTA PKG, AQUI VOCÊ SÓ "CONECTA"
 ```javascript
-import init, { multiply } from './pkg/calculadora.js'; // Altere para o nome do seu arquivo .js gerado
+import init, { add } from './pkg/calculadora.js'; // Altere para o nome do seu arquivo .js gerado
 
-async function run() {
-    await init(); // Inicializa o módulo WebAssembly
+        async function run() {
+            await init(); // Inicializa o módulo WebAssembly
 
-    // Obtém os valores dos inputs
-    const a = parseInt(document.getElementById("inputA").value);
-    const b = parseInt(document.getElementById("inputB").value);
+            // Obtém os valores dos inputs
+            const a = parseInt(document.getElementById("inputA").value);
+            const b = parseInt(document.getElementById("inputB").value);
 
-    // Verifica se os valores são números
-    if (isNaN(a) || isNaN(b)) {
-        document.getElementById("result").innerText = 'Por favor, insira números válidos.';
-        return;
-    }
+            // Verifica se os valores são números
+            if (isNaN(a) || isNaN(b)) {
+                document.getElementById("result").innerText = 'Por favor, insira números válidos.';
+                return;
+            }
 
-    // Chama a função multiply do WebAssembly
-    const result = multiply(a, b);
-    // Exibe o resultado
-    document.getElementById("result").innerText = `Resultado: ${result}`;
-}
+            // Chama a função add do WebAssembly
+            const result = add(a, b);
+            // Exibe o resultado
+            document.getElementById("result").innerText = `Resultado: ${result}`;
+        }
 
-// Adiciona o Event Listener para o botão
-window.addEventListener('DOMContentLoaded', () => {
-    document.getElementById("calculateButton").addEventListener('click', run);
-});
+        // Adiciona o Event Listener para o botão
+        window.addEventListener('DOMContentLoaded', () => {
+            document.getElementById("calculateButton").addEventListener('click', run);
+        });
 ```
 
 ## Executando o Projeto
