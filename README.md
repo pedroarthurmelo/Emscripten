@@ -31,7 +31,7 @@ Clone o repositório do Emscripten:
 git clone https://github.com/emscripten-core/emsdk.git
 ```
 
-#### 3.1 Acessar a pasta
+#### 3.1 Acessar a pasta no git
 
 ```bash
 cd emsdk
@@ -39,7 +39,7 @@ cd emsdk
 
 ### 4. Instalar as ferramentas do SDK
 
-Execute os seguintes comandos:
+Execute os seguintes comandos no git:
 
 ```bash
 ./emsdk install latest
@@ -49,7 +49,7 @@ source ./emsdk_env.sh
 
 ### 5. Verificar se o `emcc` está funcionando
 
-Execute:
+Execute no git:
 
 ```bash
 emcc --version
@@ -57,7 +57,7 @@ emcc --version
 
 ### 6. Criar um novo projeto Rust
 
-Na pasta `emsdk`, crie um novo projeto:
+Na pasta `emsdk`, crie um novo projeto pelo git:
 
 ```bash
 cargo new "nome_da_pasta_sua" --lib
@@ -109,7 +109,7 @@ crate-type = ["cdylib"] # Isso é necessário para compilar para WebAssembly
 
 ### 9. Construir o projeto
 
-Na pasta do seu projeto, execute:
+Na pasta do seu projeto, execute no git:
 
 ```bash
 wasm-pack build --target web
@@ -117,8 +117,9 @@ wasm-pack build --target web
 Pra que serve?, é um comando essencial para compilar projetos Rust para WebAssembly, preparando-os para serem utilizados em aplicações web. Ele automatiza o processo de compilação, geração de wrappers JavaScript, e estruturação do pacote, tornando a integração com projetos JavaScript simples e direta.
 
 
-### Depois disso, será criado uma pasta pkg onde contém os arquivos WEBASSEMBLY
-# Você irá criar uma pasta em htdocs(XAMPP) e colocará os seguintes arquivos:
+### Depois disso, será criado uma pasta pkg onde contém os arquivos WEBASSEMBLY `C:\Users\seu_usuario\emsdk\pasta_criada\acho q vai estar por aq kkkk`
+
+# Você irá criar uma pasta em htdocs(SEU PROJETO)(XAMPP) e colocará os seguintes arquivos:
 ## Uma pasta apenas com o lib.rs, a pasta com o pkg gerado(webassembly) e um index criado para interligar o JavaScript gerado pelo WebAssembly. Depois só ligar o Apache e pequisar por localhost/nome_do_projeto e testar o código
 
 ### 10. Criar um arquivo HTML
