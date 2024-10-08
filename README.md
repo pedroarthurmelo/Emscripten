@@ -5,7 +5,7 @@
 
 # Projeto Rust para WebAssembly
 
-Este projeto demonstra como criar uma calculadora simples em Rust que utiliza WebAssembly para realizar multiplicação. O exemplo inclui a instalação de ferramentas necessárias, a configuração do ambiente e a criação de um projeto básico.
+Este projeto demonstra como criar uma calculadora simples em Rust que utiliza WebAssembly para realizar soma. O exemplo inclui a instalação de ferramentas necessárias, a configuração do ambiente e a criação de um projeto básico.
 
 ## Instalação
 
