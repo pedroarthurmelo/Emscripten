@@ -1,0 +1,48 @@
+body {
+    display: flex; /* Ativa o modelo Flexbox */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: 100vh; /* Define a altura da tela */
+    margin: 0; /* Remove margens padrão */
+    background-color: #e0f7fa; /* Cor de fundo suave */
+    font-family: 'Arial', sans-serif; /* Fonte mais moderna */
+}
+
+.container {
+    text-align: center; /* Centraliza o texto dentro do container */
+    border: 1px solid #4dd0e1; /* Borda colorida */
+    padding: 30px; /* Espaçamento interno aumentado */
+    background-color: #ffffff; /* Cor de fundo branca */
+    border-radius: 12px; /* Bordas arredondadas */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transições suaves */
+}
+
+.container:hover {
+    transform: translateY(-5px); /* Levanta o contêiner ao passar o mouse */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Sombra mais intensa ao passar o mouse */
+}
+
+h1 {
+    color: #00796b; /* Cor do título */
+    margin-bottom: 15px; /* Espaçamento abaixo do título */
+}
+
+p {
+    color: #555; /* Cor do texto */
+    line-height: 1.5; /* Aumenta o espaçamento entre linhas */
+}
+
+button {
+    padding: 10px 20px; /* Espaçamento interno do botão */
+    border: none; /* Remove borda padrão */
+    border-radius: 5px; /* Bordas arredondadas no botão */
+    background-color: #00796b; /* Cor do botão */
+    color: white; /* Cor do texto do botão */
+    cursor: pointer; /* Cursor de ponteiro ao passar sobre o botão */
+    transition: background-color 0.3s ease; /* Transição suave de cor */
+}
+
+button:hover {
+    background-color: #004d40; /* Cor mais escura ao passar o mouse */
+}
