@@ -60,11 +60,11 @@ emcc --version
 Na pasta `emsdk`, crie um novo projeto pelo git:
 
 ```bash
-cargo new "nome_da_pasta_sua" --lib
+cargo new "nome_da_sua_pasta(semaspas)" --lib
 ```
 Por que --lib? Esta opção indica que o projeto será uma biblioteca, em vez de um executável. Quando você cria um projeto como biblioteca, o Cargo cria um arquivo lib.rs dentro do diretório src, onde você pode definir suas funções e estruturas que podem ser utilizadas por outros projetos ou pelo código JavaScript quando compilado para WebAssembly.
 
-Navegue até a pasta do projeto (geralmente em `C:\Users\seu_usuario\emsdk\pasta_criada`) E ABRA NO VSCODE.
+Navegue até a pasta do projeto (geralmente em `C:\Users\seu_usuario\emsdk\pasta_criada`) E ABRA NO VSCODE, vai gerar um `cargo.toml` e um `src`, onde vai ter o `lib.rs`, que é seu arquivo.
 
 ### 7. Escrever o código no `lib.rs`
 
@@ -109,8 +109,11 @@ crate-type = ["cdylib"] # Isso é necessário para compilar para WebAssembly
 
 ### 9. Construir o projeto
 
-Na pasta do seu projeto, execute no git:
-
+Na pasta do seu projeto, execute no git para instalação do wasm-pack:
+```bash
+cargo install wasm-pack
+```
+aqui ele vai transformar o seu arquivo lib.rs em um pacote onde vai ter webassembly, javascript e outros.
 ```bash
 wasm-pack build --target web
 ```
