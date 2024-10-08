@@ -79,13 +79,13 @@ use wasm_bindgen::prelude::*;
 // função deve ser exposta ao JavaScript quando o código Rust for compilado para
 // WebAssembly. Isso permite que a função possa ser chamada a partir do código JavaScript.
 #[wasm_bindgen]
-// Define a função `multiply` que recebe dois parâmetros do tipo inteiro (i32).
+// Define a função `add` que recebe dois parâmetros do tipo inteiro (i32).
 // O nome da função será acessível a partir do JavaScript após a compilação.
-pub fn multiply(a: i32, b: i32) -> i32 {
-    // A função retorna o resultado da multiplicação dos dois parâmetros.
+pub fn add(a: i32, b: i32) -> i32 {
+    // A função retorna o resultado da soma dos dois parâmetros.
     // O tipo de retorno é também um inteiro (i32), o que é consistente com os
     // tipos de entrada.
-    a * b
+    a + b
 }
 
 ```
