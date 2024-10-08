@@ -109,11 +109,11 @@ crate-type = ["cdylib"] # Isso é necessário para compilar para WebAssembly
 
 ### 9. Construir o projeto
 
-Na pasta do seu projeto, execute no git para instalação do wasm-pack:
+Execute no git para instalação do wasm-pack:
 ```bash
 cargo install wasm-pack
 ```
-aqui ele vai transformar o seu arquivo lib.rs em um pacote onde vai ter webassembly, javascript e outros.
+Na pasta do seu projeto, execute no git, onde aqui ele vai transformar o seu arquivo lib.rs em um pacote onde vai ter webassembly, javascript e outros.
 ```bash
 wasm-pack build --target web
 ```
@@ -182,6 +182,57 @@ import init, { add } from './pkg/calculadora.js'; // Altere para o nome do seu a
         window.addEventListener('DOMContentLoaded', () => {
             document.getElementById("calculateButton").addEventListener('click', run);
         });
+```
+ISTO É UMA FORMA DE FAZER, existe também a de em vez de chamar o arquivo javascript, chamar o arquivo wasm.
+
+JavaScript é melhor para:
+
+Aplicações que dependem de muita interatividade com o DOM (manipulação de elementos HTML).
+Projetos pequenos e médios, onde a simplicidade e a velocidade de desenvolvimento são essenciais.
+Tarefas comuns da web, como criação de sites, manipulação de formulários e animações.
+Back-end em Node.js ou outras APIs baseadas em JavaScript.
+
+WebAssembly é melhor para:
+
+Aplicações que precisam de alto desempenho, como jogos, editores de vídeo/imagem ou qualquer coisa que envolva algoritmos complexos.
+Reutilizar código existente de linguagens como Rust, C ou C++.
+Cenários onde o JavaScript não consegue entregar o desempenho desejado, como em cálculos intensivos ou tarefas com grandes volumes de dados.
+
+### formato WASM, você só cria uma função para ativar o WASM (ALTERAÇÕES FEITAS NO INDEX.JS)
+```javascript
+// Função que carrega o WebAssembly e utiliza a função `add` exportada
+async function loadWasm() {
+    // Carrega o arquivo `.wasm`
+    const response = await fetch('./pkg/calculadora_bg.wasm');
+    const wasmModule = await WebAssembly.instantiateStreaming(response);
+    return wasmModule.instance.exports;
+}
+
+async function run() {
+    // Inicializa o WebAssembly
+    const wasmInstance = await loadWasm();
+
+    // Obtém os valores dos inputs
+    const a = parseInt(document.getElementById("inputA").value);
+    const b = parseInt(document.getElementById("inputB").value);
+
+    // Verifica se os valores são números
+    if (isNaN(a) || isNaN(b)) {
+        document.getElementById("result").innerText = 'Por favor, insira números válidos.';
+        return;
+    }
+
+    // Chama a função `add` do WebAssembly
+    const result = wasmInstance.add(a, b);
+    // Exibe o resultado
+    document.getElementById("result").innerText = `Resultado: ${result}`;
+}
+
+// Adiciona o Event Listener para o botão
+window.addEventListener('DOMContentLoaded', () => {
+    document.getElementById("calculateButton").addEventListener('click', run);
+});
+
 ```
 
 ## Executando o Projeto
