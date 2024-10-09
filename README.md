@@ -60,8 +60,8 @@ emcc --version
 Na pasta `emsdk`, crie um novo projeto pelo git:
 
 ```bash
-cargo new "nome_da_sua_pasta(semaspas)" --lib
-cd "nomedapasta"
+cargo new "nome_da_sua_pasta(sem aspas)" --lib
+cd "nomedapasta(sem aspas)"
 ```
 Por que --lib? Esta opção indica que o projeto será uma biblioteca, em vez de um executável. Quando você cria um projeto como biblioteca, o Cargo cria um arquivo lib.rs dentro do diretório src, onde você pode definir suas funções e estruturas que podem ser utilizadas por outros projetos ou pelo código JavaScript quando compilado para WebAssembly.
 
