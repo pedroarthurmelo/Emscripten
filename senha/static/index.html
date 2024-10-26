@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Análise de Senhas</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <h1>Ferramenta de Análise de Senhas</h1>
@@ -13,7 +14,11 @@
     <!-- Botão para iniciar a análise das senhas -->
     <button id="analyze">Analisar Senhas</button>
 
-    <!-- Input para carregar arquivos CSV ou JSON com senhas -->
+    <!-- Área de carregamento -->
+    <div id="loading" style="display: none;">Carregando...</div>
+
+    <!-- Label estilizado para escolher arquivo -->
+    <label class="file-label" for="fileInput">Escolher Arquivo</label>
     <input type="file" id="fileInput" accept=".json, .csv">
 
     <h2>Resultados:</h2>

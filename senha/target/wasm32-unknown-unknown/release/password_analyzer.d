@@ -1,1 +1,1 @@
-C:\Users\calabreso\emsdk\senha\target\wasm32-unknown-unknown\release\password_analyzer.wasm: C:\Users\calabreso\emsdk\senha\src\lib.rs C:\Users\calabreso\emsdk\senha\src\password_analysis.rs
+C:\Users\calabreso\Documents\GitHub\Emscripten\senha\target\wasm32-unknown-unknown\release\password_analyzer.wasm: C:\Users\calabreso\Documents\GitHub\Emscripten\senha\src\lib.rs C:\Users\calabreso\Documents\GitHub\Emscripten\senha\src\password_analysis.rs C:\Users\calabreso\Documents\GitHub\Emscripten\senha\src\tests.rs
