@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Análise de Senhas</title>
+    <script type="module">
+        import init, { analyze_passwords } from '../../pkg/password_analyzer.js';
+
+        async function run() {
+            await init();
+            document.getElementById('analyze').onclick = async () => {
+                const passwords = document.getElementById('passwords').value.split('\n');
+                const results = analyze_passwords(passwords);
+                document.getElementById('results').innerText = results.join('\n');
+            };
+
+            document.getElementById('fileInput').addEventListener('change', async (event) => {
+                const file = event.target.files[0];
+                const reader = new FileReader();
+                reader.onload = async (e) => {
+                    const content = e.target.result;
+                    let passwords = [];
+
+                    if (file.type === 'application/json') {
+                        passwords = JSON.parse(content); // Assume que o arquivo JSON é um array de strings
+                    } else if (file.type === 'text/csv') {
+                        const csvRows = content.split('\n');
+                        passwords = csvRows.map(row => row.trim()).filter(row => row.length > 0);
+                    }
+
+                    const results = analyze_passwords(passwords);
+                    document.getElementById('results').innerText = results.join('\n');
+                };
+                reader.readAsText(file);
+            });
+        }
+        run();
+    </script>
+</head>
+<body>
+    <h1>Ferramenta de Análise de Senhas</h1>
+    <textarea id="passwords" rows="10" cols="30" placeholder="Insira suas senhas aqui, uma por linha..."></textarea><br>
+    <button id="analyze">Analisar Senhas</button>
+    <input type="file" id="fileInput" accept=".json, .csv">
+    <h2>Resultados:</h2>
+    <pre id="results"></pre>
+</body>
+</html>
