@@ -1,0 +1,15 @@
+{
+  "name": "password_analyzer",
+  "type": "module",
+  "version": "0.1.0",
+  "files": [
+    "password_analyzer_bg.wasm",
+    "password_analyzer.js",
+    "password_analyzer.d.ts"
+  ],
+  "main": "password_analyzer.js",
+  "types": "password_analyzer.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}
