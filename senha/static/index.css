@@ -1,0 +1,121 @@
+/* Estilos gerais para o corpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Estilo para o cabeçalho */
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Área de texto para inserção de senhas */
+textarea {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Botão de análise */
+button#analyze {
+    padding: 10px 20px;
+    background-color: #4a90e2;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+    transition: background-color 0.3s ease;
+}
+
+button#analyze:hover {
+    background-color: #357abd;
+}
+
+/* Área de carregamento */
+#loading {
+    font-size: 18px;
+    color: #555;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Estilo para o label do input de arquivo */
+label.file-label {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4a90e2;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    display: block;
+    text-align: center;
+    max-width: 121px;
+    margin: 0 auto;
+    transition: background-color 0.3s ease;
+}
+
+label.file-label:hover {
+    background-color: #357abd;
+}
+
+/* Ocultar o input file padrão */
+input[type="file"] {
+    display: none;
+}
+
+/* Estilo para a seção de resultados */
+h2 {
+    color: #333;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+pre#results {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    max-width: 600px;
+    margin: 0 auto;
+    color: #333;
+}
+
+/* Link para a explicação */
+a.explanation-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4a90e2;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    position: absolute;
+
+    text-align: center;
+    margin-top: 20px;
+    display: block;
+    max-width: 200px;
+    margin: 20px auto;
+    transition: background-color 0.3s ease;
+}
+
+a.explanation-link:hover {
+    background-color: #357abd;
+}
