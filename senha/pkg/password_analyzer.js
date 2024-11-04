@@ -136,15 +136,15 @@ function getArrayJsValueFromWasm0(ptr, len) {
     return result;
 }
 /**
- * @param {(string)[]} passwords
+ * @param {(string)[]} senhas
  * @returns {(string)[]}
  */
-export function analyze_passwords(passwords) {
+export function analisar_senhas(senhas) {
     try {
         const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-        const ptr0 = passArrayJsValueToWasm0(passwords, wasm.__wbindgen_malloc);
+        const ptr0 = passArrayJsValueToWasm0(senhas, wasm.__wbindgen_malloc);
         const len0 = WASM_VECTOR_LEN;
-        wasm.analyze_passwords(retptr, ptr0, len0);
+        wasm.analisar_senhas(retptr, ptr0, len0);
         var r0 = getDataViewMemory0().getInt32(retptr + 4 * 0, true);
         var r1 = getDataViewMemory0().getInt32(retptr + 4 * 1, true);
         var v2 = getArrayJsValueFromWasm0(r0, r1).slice();

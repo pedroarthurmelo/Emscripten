@@ -1,16 +1,16 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * @param {(string)[]} passwords
+ * @param {(string)[]} senhas
  * @returns {(string)[]}
  */
-export function analyze_passwords(passwords: (string)[]): (string)[];
+export function analisar_senhas(senhas: (string)[]): (string)[];
 
 export type InitInput = RequestInfo | URL | Response | BufferSource | WebAssembly.Module;
 
 export interface InitOutput {
   readonly memory: WebAssembly.Memory;
-  readonly analyze_passwords: (a: number, b: number, c: number) => void;
+  readonly analisar_senhas: (a: number, b: number, c: number) => void;
   readonly __wbindgen_malloc: (a: number, b: number) => number;
   readonly __wbindgen_realloc: (a: number, b: number, c: number, d: number) => number;
   readonly __wbindgen_add_to_stack_pointer: (a: number) => number;
