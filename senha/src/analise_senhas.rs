@@ -3,7 +3,7 @@ use rayon::prelude::*; // Rayon é uma biblioteca para facilitar a programação
 use std::collections::HashSet; // Importa o tipo HashSet, que é uma coleção que não permite elementos duplicados.
 
 // Usando lazy_static para inicializar a lista de senhas comuns apenas uma vez, em tempo de execução.
-lazy_static::lazy_static! {
+    lazy_static::lazy_static! {
     // Define uma variável estática chamada SENHAS_COMUNS que é um HashSet de strings estáticas.
     static ref SENHAS_COMUNS: HashSet<&'static str> = {
         let mut m = HashSet::new(); // Cria um novo HashSet vazio.
