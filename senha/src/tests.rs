@@ -9,6 +9,10 @@ mod testes {
 
 // Testa uma senha fraca (menos de 8 caracteres)
 #[test]
+fn teste_senha_muito_fraca(){
+    assert_eq!(avaliar_forca(&String::from("password")), "Muito Fraca");
+}
+#[test]
 fn teste_senha_fraca() {
     // Verifica se a senha "abcde" (fraca) é considerada "Fraca"
     assert_eq!(avaliar_forca(&String::from("abcde")), "Fraca");

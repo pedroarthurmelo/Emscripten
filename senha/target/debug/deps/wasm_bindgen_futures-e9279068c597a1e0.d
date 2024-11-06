@@ -1,0 +1,9 @@
+C:\Users\calabreso\Desktop\Nova pasta (2)\Emscripten-main\Emscripten-main\senha\target\debug\deps\libwasm_bindgen_futures-e9279068c597a1e0.rmeta: C:\Users\calabreso\.cargo\registry\src\index.crates.io-6f17d22bba15001f\wasm-bindgen-futures-0.4.45\src/lib.rs C:\Users\calabreso\.cargo\registry\src\index.crates.io-6f17d22bba15001f\wasm-bindgen-futures-0.4.45\src\queue.rs C:\Users\calabreso\.cargo\registry\src\index.crates.io-6f17d22bba15001f\wasm-bindgen-futures-0.4.45\src\task\singlethread.rs
+
+C:\Users\calabreso\Desktop\Nova pasta (2)\Emscripten-main\Emscripten-main\senha\target\debug\deps\libwasm_bindgen_futures-e9279068c597a1e0.rlib: C:\Users\calabreso\.cargo\registry\src\index.crates.io-6f17d22bba15001f\wasm-bindgen-futures-0.4.45\src/lib.rs C:\Users\calabreso\.cargo\registry\src\index.crates.io-6f17d22bba15001f\wasm-bindgen-futures-0.4.45\src\queue.rs C:\Users\calabreso\.cargo\registry\src\index.crates.io-6f17d22bba15001f\wasm-bindgen-futures-0.4.45\src\task\singlethread.rs
+
+C:\Users\calabreso\Desktop\Nova pasta (2)\Emscripten-main\Emscripten-main\senha\target\debug\deps\wasm_bindgen_futures-e9279068c597a1e0.d: C:\Users\calabreso\.cargo\registry\src\index.crates.io-6f17d22bba15001f\wasm-bindgen-futures-0.4.45\src/lib.rs C:\Users\calabreso\.cargo\registry\src\index.crates.io-6f17d22bba15001f\wasm-bindgen-futures-0.4.45\src\queue.rs C:\Users\calabreso\.cargo\registry\src\index.crates.io-6f17d22bba15001f\wasm-bindgen-futures-0.4.45\src\task\singlethread.rs
+
+C:\Users\calabreso\.cargo\registry\src\index.crates.io-6f17d22bba15001f\wasm-bindgen-futures-0.4.45\src/lib.rs:
+C:\Users\calabreso\.cargo\registry\src\index.crates.io-6f17d22bba15001f\wasm-bindgen-futures-0.4.45\src\queue.rs:
+C:\Users\calabreso\.cargo\registry\src\index.crates.io-6f17d22bba15001f\wasm-bindgen-futures-0.4.45\src\task\singlethread.rs:

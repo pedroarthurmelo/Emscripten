@@ -1,16 +1,16 @@
 [package]
-name = "password_analyzer"
-version = "0.1.0"
-edition = "2021"
+name = "password_analyzer"  # Nome do seu pacote/crate.
+version = "0.1.0"  # Versão do seu pacote.
+edition = "2021"  # Edição do Rust usada (2021 é a edição mais recente).
 
 [lib]
-crate-type = ["cdylib"]
+crate-type = ["cdylib"]  # Configura o tipo de biblioteca gerada. "cdylib" é usado para compilar para WebAssembly. Isso permite que a biblioteca Rust seja chamada a partir de JavaScript ou outras linguagens.
 
 [dependencies]
-serde = { version = "1.0", features = ["derive"] }
-serde_json = "1.0"
-serde-wasm-bindgen = "0.6.5" # Make sure this is included
-wasm-bindgen = "0.2"
-wasm-bindgen-futures = "0.4"
-js-sys = "0.3"
-rayon = "1.7" # Or latest version
+serde = { version = "1.0", features = ["derive"] }  # Serde é usada para serialização e deserialização de dados em Rust.
+serde_json = "1.0"  # Serde JSON é uma biblioteca para manipular dados JSON. A versão "1.0" é a mais estável.
+serde-wasm-bindgen = "0.6.5"  # Integra Serde com o WASM, permitindo a conversão de tipos entre JavaScript e Rust.
+wasm-bindgen = "0.2"  # A principal biblioteca que permite que Rust se comunique com JavaScript em um ambiente WebAssembly.
+wasm-bindgen-futures = "0.4"  # Suporta a conversão de Futures de Rust para Promises de JavaScript em WASM.
+js-sys = "0.3"  # Fornece bindings para a API JavaScript do ambiente WASM, permitindo interação com objetos e funções JavaScript.
+rayon = "1.7"  # Rayon é uma biblioteca para paralelização fácil de código em Rust. Usada no seu código para processamento paralelo.
