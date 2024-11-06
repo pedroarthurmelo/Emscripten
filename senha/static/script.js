@@ -4,34 +4,28 @@ import init, { analisar_senhas } from '../../pkg/password_analyzer.js';
 async function run() {
     await init(); // Inicializa o WebAssembly
 
-    const worker = new Worker('worker.js'); // Cria uma instância do Web Worker
-
     document.getElementById('analyze').onclick = async () => {
-        await processPasswordsFromTextarea(worker);
+        await processPasswordsFromTextarea();
     };
 
     document.getElementById('fileInput').addEventListener('change', async (event) => {
         const file = event.target.files[0]; // Obtém o arquivo selecionado pelo usuário
         if (file) {
-            await processPasswordsFromFile(file, worker);
+            await processPasswordsFromFile(file);
         }
-    });
-
-    // Ouve as mensagens do Web Worker
-    worker.onmessage = function(e) {
-        displayResults(e.data); // Exibe os resultados recebidos do worker
-    };
+    }); 
 }
 
 // Função para processar senhas da área de texto
-async function processPasswordsFromTextarea(worker) {
+async function processPasswordsFromTextarea() {
     document.getElementById('loading').style.display = 'block'; // Mostra o carregando
     const passwords = document.getElementById('passwords').value.split('\n').map(s => s.trim()).filter(Boolean);
-    worker.postMessage(passwords); // Envia as senhas para o worker
+    const results = await analisar_senhas(passwords);
+    displayResults(JSON.parse(results));
 }
 
 // Função para processar senhas de um arquivo
-async function processPasswordsFromFile(file, worker) {
+async function processPasswordsFromFile(file) {
     const reader = new FileReader(); // Cria um leitor de arquivos
 
     reader.onload = async (e) => {
@@ -47,7 +41,11 @@ async function processPasswordsFromFile(file, worker) {
             return;
         }
 
-        worker.postMessage(passwords); // Envia as senhas para o worker
+
+        const results = await analisar_senhas(passwords);
+        displayResults(JSON.parse(results));
+
+
     };
 
     reader.readAsText(file); // Lê o arquivo como texto
@@ -59,19 +57,20 @@ function displayResults(results) {
     document.getElementById('loading').style.display = 'none'; // Esconde o carregando
 }
 
-// Função para analisar JSON
+// Função para analisar JSON (in this example, returns an array of passwords)
 async function parseJson(content) {
-    try {
-        const jsonData = JSON.parse(content);
-        if (!Array.isArray(jsonData.passwords)) {
-            throw new Error('O arquivo JSON deve conter um objeto com uma propriedade "passwords" que é um array.');
-        }
-        return jsonData.passwords; // Extrai o array de senhas
-    } catch (error) {
-        alert('Erro ao analisar o arquivo JSON: ' + error.message);
-        return [];
-    }
+  try {
+      const jsonData = JSON.parse(content);
+      if (!Array.isArray(jsonData.passwords)) {
+          throw new Error('O arquivo JSON deve conter um objeto com uma propriedade "passwords" que é um array.');
+      }
+      return jsonData.passwords; // Returns the array of passwords from the JSON
+  } catch (error) {
+      alert('Erro ao analisar o arquivo JSON: ' + error.message);
+      return []; // Return an empty array in case of an error to prevent further issues.
+  }
 }
+
 
 // Função para analisar CSV
 function parseCsv(content) {

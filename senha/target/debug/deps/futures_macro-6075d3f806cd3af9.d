@@ -1,0 +1,9 @@
+C:\Users\calabreso\Documents\GitHub\Emscripten\senha\target\debug\deps\futures_macro-6075d3f806cd3af9.dll: C:\Users\calabreso\.cargo\registry\src\index.crates.io-6f17d22bba15001f\futures-macro-0.3.31\src/lib.rs C:\Users\calabreso\.cargo\registry\src\index.crates.io-6f17d22bba15001f\futures-macro-0.3.31\src\executor.rs C:\Users\calabreso\.cargo\registry\src\index.crates.io-6f17d22bba15001f\futures-macro-0.3.31\src\join.rs C:\Users\calabreso\.cargo\registry\src\index.crates.io-6f17d22bba15001f\futures-macro-0.3.31\src\select.rs C:\Users\calabreso\.cargo\registry\src\index.crates.io-6f17d22bba15001f\futures-macro-0.3.31\src\stream_select.rs
+
+C:\Users\calabreso\Documents\GitHub\Emscripten\senha\target\debug\deps\futures_macro-6075d3f806cd3af9.d: C:\Users\calabreso\.cargo\registry\src\index.crates.io-6f17d22bba15001f\futures-macro-0.3.31\src/lib.rs C:\Users\calabreso\.cargo\registry\src\index.crates.io-6f17d22bba15001f\futures-macro-0.3.31\src\executor.rs C:\Users\calabreso\.cargo\registry\src\index.crates.io-6f17d22bba15001f\futures-macro-0.3.31\src\join.rs C:\Users\calabreso\.cargo\registry\src\index.crates.io-6f17d22bba15001f\futures-macro-0.3.31\src\select.rs C:\Users\calabreso\.cargo\registry\src\index.crates.io-6f17d22bba15001f\futures-macro-0.3.31\src\stream_select.rs
+
+C:\Users\calabreso\.cargo\registry\src\index.crates.io-6f17d22bba15001f\futures-macro-0.3.31\src/lib.rs:
+C:\Users\calabreso\.cargo\registry\src\index.crates.io-6f17d22bba15001f\futures-macro-0.3.31\src\executor.rs:
+C:\Users\calabreso\.cargo\registry\src\index.crates.io-6f17d22bba15001f\futures-macro-0.3.31\src\join.rs:
+C:\Users\calabreso\.cargo\registry\src\index.crates.io-6f17d22bba15001f\futures-macro-0.3.31\src\select.rs:
+C:\Users\calabreso\.cargo\registry\src\index.crates.io-6f17d22bba15001f\futures-macro-0.3.31\src\stream_select.rs:
